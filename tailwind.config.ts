@@ -38,7 +38,7 @@ export default {
 				},
 				muted: {
 					DEFAULT: 'hsl(var(--muted))',
-					foreground: 'hsl(var(--muted-foreground))'
+					foreground: 'hsl(var(--muted-foreground))' // This will be PRD's secondaryText color #878A99
 				},
 				accent: {
 					DEFAULT: 'hsl(var(--accent))',
@@ -51,23 +51,17 @@ export default {
 				card: {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
-				},
-				sidebar: {
-					DEFAULT: 'hsl(var(--sidebar-background))',
-					foreground: 'hsl(var(--sidebar-foreground))',
-					primary: 'hsl(var(--sidebar-primary))',
-					'primary-foreground': 'hsl(var(--sidebar-primary-foreground))',
-					accent: 'hsl(var(--sidebar-accent))',
-					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
-					border: 'hsl(var(--sidebar-border))',
-					ring: 'hsl(var(--sidebar-ring))'
 				}
+        // Removed 'sidebar' colors as they are not in PRD scope and CSS vars were removed
 			},
 			borderRadius: {
-				lg: 'var(--radius)',
-				md: 'calc(var(--radius) - 2px)',
-				sm: 'calc(var(--radius) - 4px)'
+        // The value of --radius is updated in index.css to 0.375rem (rounded-md)
+				lg: 'var(--radius)', // Will be 0.375rem
+				md: 'calc(var(--radius) - 2px)', // Will be 0.375rem - 2px (approx 0.25rem)
+				sm: 'calc(var(--radius) - 4px)' // Will be 0.375rem - 4px (approx 0.125rem)
 			},
+      // typography.primaryFont is 'sans-serif'. Tailwind's default font stack for 'sans' is sufficient.
+      // No specific font family extension needed unless a named custom font was specified.
 			keyframes: {
 				'accordion-down': {
 					from: {
